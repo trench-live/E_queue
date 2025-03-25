@@ -1,0 +1,81 @@
+/* OrderItem.css */
+.order-item {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.order-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.order-item strong {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.order-item p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin: 8px 0;
+}
+
+.products-list {
+    margin-top: 10px;
+}
+
+.products-list h4 {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.products-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.products-list ul li {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: var(--danger-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.delete-button.pending {
+    background-color: var(--secondary-color);
+}
+
+.delete-button.pending:hover {
+    background-color: #5a6268;
+}

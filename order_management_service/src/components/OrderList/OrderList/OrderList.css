@@ -1,0 +1,13 @@
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступ между карточками */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-list li {
+    flex: 1 1 calc(50% - 10px); /* Две карточки в ряд с отступом */
+    box-sizing: border-box;
+}

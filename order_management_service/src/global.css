@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #007bff; /* Основной цвет (синий) */
+    --secondary-color: #6c757d; /* Вторичный цвет (серый) */
+    --success-color: #28a745; /* Цвет успеха (зеленый) */
+    --danger-color: #dc3545; /* Цвет ошибки (красный) */
+    --background-color: #f8f9fa; /* Фоновый цвет */
+    --text-color: #333333; /* Цвет текста */
+    --border-color: #e0e0e0; /* Цвет границ */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+
+button, select {
+    cursor: pointer;
+}
