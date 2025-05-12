@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchOrders, fetchStatuses, updateOrderStatus } from '../../services/OrderService';
+import { fetchOrders, fetchStatuses, updateOrderStatus, deleteOrder } from '../../services/OrderService';
 import OrderList from '../OrderList/OrderList/OrderList';
 import '../../global.css';
 import './App.css';
@@ -8,12 +8,9 @@ function App() {
   const [orders, setOrders] = useState([]);
   const [statuses, setStatuses] = useState([]);
 
-  const deleteOrder = async (orderId) => {
+  const handleDeleteOrder = async (orderId) => {
     try {
-      // Отправляем запрос на удаление заказа
-      await fetch(`http://localhost:8080/api/order/${orderId}`, {
-        method: 'DELETE',
-      });
+      await deleteOrder(orderId);
       // Обновляем локальное состояние, удаляя заказ из списка
       setOrders((prevOrders) => prevOrders.filter((order) => order.id !== orderId));
     } catch (error) {
@@ -61,7 +58,7 @@ function App() {
             orders={orders}
             statuses={statuses}
             onStatusChange={handleStatusChange}
-            onDeleteOrder={deleteOrder}
+            onDeleteOrder={handleDeleteOrder}
         />
       </div>
   );
