@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import './OrderStatus.css'; // Импортируем стили
+import './OrderStatus.css';
 
 const OrderStatus = () => {
     const { orderId } = useParams();
@@ -10,10 +10,18 @@ const OrderStatus = () => {
     useEffect(() => {
         const fetchOrderStatus = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/order/${orderId}/getStatus`);
+                const response = await axios.get(
+                    `${process.env.REACT_APP_API_BASE_URL}/order/${orderId}/getStatus`,
+                    {
+                        headers: {
+                            'X-API-KEY': process.env.REACT_APP_API_KEY
+                        }
+                    }
+                );
                 setStatus(response.data);
             } catch (error) {
-                setStatus('Failed to fetch status');
+                console.error('Ошибка получения статуса:', error);
+                setStatus(error.response?.data?.message || 'Ошибка запроса');
             }
         };
 
