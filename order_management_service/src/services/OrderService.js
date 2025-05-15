@@ -29,3 +29,12 @@ export const updateOrderStatus = async (orderId, newStatus) => {
         throw error;
     }
 };
+
+export const deleteOrder = async (orderId) => {
+    try {
+        return await apiClient.delete(`/order/${orderId}`);
+    } catch (error) {
+        console.error('Ошибка при удалении заказа:', error.message)
+        throw error;
+    }
+}
