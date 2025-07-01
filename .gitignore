@@ -1,0 +1,44 @@
+### === Автогенерируемые файлы === ###
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Системные
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+### === Java (API) === ###
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.properties  # Исключение: нужен
+HELP.md
+
+### === Node.js (Сервисы) === ###
+# Зависимости
+node_modules/
+**/node_modules/
+
+# Локальные настройки
+.env
+*.env*
+.env.local
+
+# Сборка
+dist/
+**/dist/
+build/
+**/build/
+
+# Логи
+*.log
+npm-debug.log*
+
+### === Исключения (важные файлы) === ###
+!mvnw
+!mvnw.cmd
+!package.json
+!package-lock.json   # Фиксация версий
+!README.md
