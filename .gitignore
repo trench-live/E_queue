@@ -1,0 +1,41 @@
+### Автогенерируемые файлы ###
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Системные
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+### Базы данных ###
+*.db
+*.sqlite
+*.h2.db
+*.mv.db
+
+### Java ###
+# Maven
+**/target/
+!.mvn/wrapper/maven-wrapper.properties
+HELP.md
+
+# Maven Wrapper
+.mvn/
+!.mvn/wrapper/
+!mvnw
+!mvnw.cmd
+
+### Node.js ###
+node_modules/
+**/dist/
+**/build/
+.env
+*.log
+
+### Исключения ###
+!package.json
+!package-lock.json
+!README.md
