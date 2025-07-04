@@ -1,4 +1,4 @@
-### === Автогенерируемые файлы === ###
+### Автогенерируемые файлы ###
 # IDE
 .idea/
 *.iml
@@ -10,35 +10,32 @@ Thumbs.db
 *.swp
 *~
 
-### === Java (API) === ###
+### Базы данных ###
+*.db
+*.sqlite
+*.h2.db
+*.mv.db
+
+### Java ###
 # Maven
-target/
-!.mvn/wrapper/maven-wrapper.properties  # Исключение: нужен
+**/target/
+!.mvn/wrapper/maven-wrapper.properties
 HELP.md
 
-### === Node.js (Сервисы) === ###
-# Зависимости
-node_modules/
-**/node_modules/
-
-# Локальные настройки
-.env
-*.env*
-.env.local
-
-# Сборка
-dist/
-**/dist/
-build/
-**/build/
-
-# Логи
-*.log
-npm-debug.log*
-
-### === Исключения (важные файлы) === ###
+# Maven Wrapper
+.mvn/
+!.mvn/wrapper/
 !mvnw
 !mvnw.cmd
+
+### Node.js ###
+node_modules/
+**/dist/
+**/build/
+.env
+*.log
+
+### Исключения ###
 !package.json
-!package-lock.json   # Фиксация версий
+!package-lock.json
 !README.md
