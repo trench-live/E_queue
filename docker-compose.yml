@@ -36,6 +36,13 @@ services:
     depends_on:
       - api
     restart: unless-stopped
+  status-service:
+    build: ./status_display_service
+    ports:
+      - "3002:3002"
+    depends_on:
+      - api
+    restart: unless-stopped
 
 volumes:
   api-logs:  # Создаём отдельный том для логов
