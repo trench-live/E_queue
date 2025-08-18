@@ -22,6 +22,13 @@ services:
         limits:
           cpus: '1'
           memory: 768M
+  order-service:
+    build: ./order_management_service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
 
 volumes:
   api-logs:  # Создаём отдельный том для логов
