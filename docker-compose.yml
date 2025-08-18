@@ -1,0 +1,27 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data.db:/app/data.db  # Том
+      - api-logs:/app/logs  # Отдельный том для логов
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data.db
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_SQL_INIT_MODE=never
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 768M
+
+volumes:
+  api-logs:  # Создаём отдельный том для логов
