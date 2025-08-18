@@ -29,6 +29,13 @@ services:
     depends_on:
       - api
     restart: unless-stopped
+  qr-service:
+    build: ./qr_register_service
+    ports:
+      - "3001:3001"
+    depends_on:
+      - api
+    restart: unless-stopped
 
 volumes:
   api-logs:  # Создаём отдельный том для логов
